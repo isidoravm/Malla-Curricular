@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="malla-container">
+        <header>
+            <h1>Malla Curricular Interactiva 🚀</h1>
+            <p>Haz clic en una asignatura para marcarla como aprobada. El progreso se guardará en tu navegador.</p>
+        </header>
+
+        <main class="semestres-grid">
+            <div class="semestre">
+                <h2>Semestre 1</h2>
+                <div class="asignatura" id="administracion-de-empresas">Administración de empresas</div>
+                <div class="asignatura" id="computacion">Computación</div>
+                <div class="asignatura" id="matematica">Matemática</div>
+            </div>
+
+            <div class="semestre">
+                <h2>Semestre 2</h2>
+                <div class="asignatura" id="comportamiento-organizacional">Comportamiento organizacional</div>
+                <div class="asignatura" id="fisica">Física</div>
+                <div class="asignatura" id="procesos-industriales">Procesos industriales</div>
+                <div class="asignatura" id="procesos-y-normas-de-calidad">Procesos y normas de calidad</div>
+            </div>
+
+            <div class="semestre">
+                <h2>Semestre 3</h2>
+                <div class="asignatura" id="calidad-total" data-requisito="procesos-y-normas-de-calidad" data-nombre-requisito="Procesos y normas de calidad">Calidad total</div>
+                <div class="asignatura" id="gestion-medio-ambiental">Gestión medio ambiental</div>
+                <div class="asignatura" id="logistica-y-operaciones">Logística y operaciones</div>
+                <div class="asignatura" id="metodos-estadisticos-1">Métodos estadísticos 1</div>
+            </div>
+
+            <div class="semestre">
+                <h2>Semestre 4</h2>
+                <div class="asignatura" id="costos-de-calidad" data-requisito="calidad-total" data-nombre-requisito="Calidad total">Costos de calidad</div>
+                <div class="asignatura" id="electivo-1">Electivo 1</div>
+                <div class="asignatura" id="evaluacion-de-proyectos">Evaluación de proyectos</div>
+                <div class="asignatura" id="metodos-estadisticos-2" data-requisito="metodos-estadisticos-1" data-nombre-requisito="Métodos estadísticos 1">Métodos estadísticos 2</div>
+            </div>
+
+            <div class="semestre">
+                <h2>Semestre 5</h2>
+                <div class="asignatura" id="auditorias-de-la-calidad">Auditorías de la calidad</div>
+                <div class="asignatura" id="control-estadistico-de-la-calidad">Control estadístico de la calidad</div>
+                <div class="asignatura" id="electivo-2">Electivo 2</div>
+                <div class="asignatura" id="sistema-de-gestion-de-la-calidad-iso-9000" data-requisito="costos-de-calidad" data-nombre-requisito="Costos de calidad">Sistema de gestión de la calidad ISO 9000</div>
+            </div>
+
+            <div class="semestre">
+                <h2>Semestre 6</h2>
+                <div class="asignatura" id="liderazgo-y-trabajo-en-equipo">Liderazgo y trabajo en equipo</div>
+                <div class="asignatura" id="mejoramiento-continuo">Mejoramiento continuo</div>
+                <div class="asignatura" id="planificacion-estrategica">Planificación estratégica</div>
+                <div class="asignatura" id="procesos-y-titulacion">Procesos y titulación</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
