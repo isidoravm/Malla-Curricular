@@ -1,1 +1,151 @@
+/* Importación de una fuente moderna desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ----- Paleta de Colores y Variables ----- */
+:root {
+    --color-fondo: #f8f9fa;       /* Blanco pastel */
+    --color-texto: #1a1a1a;       /* Negro */
+    --color-asignatura: #ffffff;  /* Blanco para las tarjetas */
+    --color-borde: #e0e0e0;       /* Gris pastel claro */
+    --color-aprobada: #d4edda;    /* Verde pastel */
+    --color-texto-aprobada: #155724; /* Verde oscuro para el texto */
+    --color-sombra: rgba(0, 0, 0, 0.05);
+    --fuente-principal: 'Poppins', sans-serif;
+}
+
+/* ----- Estilos Generales ----- */
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.malla-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ----- Encabezado ----- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+/* ----- Cuadrícula de Semestres ----- */
+.semestres-grid {
+    display: grid;
+    /* Define 6 columnas, cada una ocupando una fracción del espacio */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+/* ----- Estilos de cada Semestre (Columna) ----- */
+.semestre {
+    background-color: var(--color-fondo);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.semestre h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-borde);
+}
+
+/* ----- Estilos de cada Asignatura (Tarjeta) ----- */
+.asignatura {
+    background-color: var(--color-asignatura);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden; /* Para contener el ícono */
+}
+
+.asignatura:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--color-sombra);
+}
+
+/* ----- Estilo para Asignatura Aprobada ----- */
+.asignatura.aprobada {
+    background-color: var(--color-aprobada);
+    color: var(--color-texto-aprobada);
+    text-decoration: line-through;
+    font-weight: 600;
+    border-color: var(--color-aprobada);
+}
+
+/* Se agrega un ícono de "check" a las asignaturas aprobadas */
+.asignatura.aprobada::before {
+    font-family: 'Material Icons';
+    content: 'check_circle';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    text-decoration: none; /* Evita que el ícono se tache */
+}
+
+
+/* ----- Diseño Responsivo ----- */
+
+/* Para tablets y pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .semestres-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+}
+
+/* Para tablets en modo vertical */
+@media (max-width: 768px) {
+    .semestres-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Para teléfonos móviles */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+    .semestres-grid {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+    .semestre {
+        padding: 10px;
+    }
+}
 
